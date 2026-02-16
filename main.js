@@ -77,5 +77,37 @@ themeToggle.addEventListener('click', () => {
   }
 });
 
+// Contact form submission
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+contactForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const submitBtn = document.getElementById('submit-btn');
+  submitBtn.disabled = true;
+  submitBtn.textContent = '전송 중...';
+
+  try {
+    const res = await fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      formStatus.textContent = '문의가 성공적으로 전송되었습니다!';
+      formStatus.style.color = '#4CAF50';
+      contactForm.reset();
+    } else {
+      formStatus.textContent = '전송에 실패했습니다. 다시 시도해주세요.';
+      formStatus.style.color = '#f44336';
+    }
+  } catch {
+    formStatus.textContent = '네트워크 오류가 발생했습니다.';
+    formStatus.style.color = '#f44336';
+  }
+  submitBtn.disabled = false;
+  submitBtn.textContent = '문의하기';
+});
+
 // Initial generation
 document.querySelector('lotto-numbers').numbers = generateLottoNumbers();

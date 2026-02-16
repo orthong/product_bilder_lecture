@@ -15,6 +15,20 @@
         </div>
         <button id="generate-btn">Generate Numbers</button>
     </div>
+
+    <div class="container contact-container">
+        <h2>제휴 문의</h2>
+        <form id="contact-form" action="https://formspree.io/f/xykdjyog" method="POST">
+            <input type="text" name="company" placeholder="회사명" required>
+            <input type="text" name="name" placeholder="담당자명" required>
+            <input type="email" name="email" placeholder="이메일" required>
+            <input type="tel" name="phone" placeholder="연락처">
+            <textarea name="message" placeholder="문의 내용을 입력해주세요" rows="4" required></textarea>
+            <button type="submit" id="submit-btn">문의하기</button>
+        </form>
+        <p id="form-status"></p>
+    </div>
+
     <script src="main.js"></script>
 </body>
 </html>

@@ -18,10 +18,13 @@
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 40px 0;
+    gap: 30px;
     background-color: var(--bg-color);
     background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
     transition: background-color 0.3s;
@@ -95,6 +98,68 @@ lotto-numbers {
 
 #theme-toggle:hover {
     box-shadow: 0 4px 12px var(--shadow-hover);
+}
+
+/* Contact Form */
+.contact-container h2 {
+    color: var(--text-color);
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    transition: color 0.3s;
+}
+
+.contact-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-container input,
+.contact-container textarea {
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: inherit;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+    resize: vertical;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+[data-theme="dark"] .contact-container input,
+[data-theme="dark"] .contact-container textarea {
+    border-color: #333;
+}
+
+#submit-btn {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px var(--shadow);
+    margin-top: 5px;
+}
+
+#submit-btn:hover {
+    background-color: #1976D2;
+    box-shadow: 0 6px 8px var(--shadow-hover);
+}
+
+#form-status {
+    color: var(--text-color);
+    margin-top: 10px;
+    font-size: 0.95em;
 }
 
 @media (max-width: 600px) {
