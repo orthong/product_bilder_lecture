@@ -1,33 +1,302 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>강탄병원 - 척추·관절·뇌신경 전문병원</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-    <div class="container">
-        <h1>Lotto Number Generator</h1>
-        <div id="lotto-numbers-container">
-            <lotto-numbers></lotto-numbers>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <span>대표전화 <strong>02-1234-5678</strong></span>
+            <div class="top-bar-links">
+                <a href="#contact">제휴문의</a>
+                <button id="theme-toggle" aria-label="다크모드 전환">🌙</button>
+            </div>
         </div>
-        <button id="generate-btn">Generate Numbers</button>
     </div>
 
-    <div class="container contact-container">
-        <h2>제휴 문의</h2>
-        <form id="contact-form" action="https://formspree.io/f/xykdjyog" method="POST">
-            <input type="text" name="company" placeholder="회사명" required>
-            <input type="text" name="name" placeholder="담당자명" required>
-            <input type="email" name="email" placeholder="이메일" required>
-            <input type="tel" name="phone" placeholder="연락처">
-            <textarea name="message" placeholder="문의 내용을 입력해주세요" rows="4" required></textarea>
-            <button type="submit" id="submit-btn">문의하기</button>
-        </form>
-        <p id="form-status"></p>
-    </div>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <span class="logo-icon">+</span>
+                <div class="logo-text">
+                    <strong>강탄병원</strong>
+                    <small>GANGTAN HOSPITAL</small>
+                </div>
+            </a>
+            <nav class="nav" id="nav">
+                <a href="#about">병원소개</a>
+                <a href="#centers">전문센터</a>
+                <a href="#doctors">의료진</a>
+                <a href="#info">진료안내</a>
+                <a href="#contact">제휴문의</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="메뉴">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-slide active" id="slide-0">
+            <div class="hero-content">
+                <p class="hero-sub">척추 · 관절 · 뇌신경 전문</p>
+                <h1>강탄병원이<br>함께합니다</h1>
+                <p class="hero-desc">최첨단 의료장비와 풍부한 임상경험의 전문 의료진이<br>환자 중심의 맞춤 진료를 제공합니다.</p>
+                <a href="#reservation" class="hero-btn">진료 예약하기</a>
+            </div>
+        </div>
+        <div class="hero-slide" id="slide-1">
+            <div class="hero-content">
+                <p class="hero-sub">당일 수술 · 빠른 회복</p>
+                <h1>일상으로의<br>빠른 복귀</h1>
+                <p class="hero-desc">최소 침습 수술로 통증은 줄이고<br>회복은 빠르게, 강탄병원이 함께합니다.</p>
+                <a href="#centers" class="hero-btn">전문센터 보기</a>
+            </div>
+        </div>
+        <div class="hero-indicators">
+            <button class="indicator active" data-slide="0"></button>
+            <button class="indicator" data-slide="1"></button>
+        </div>
+    </section>
+
+    <!-- Quick Menu -->
+    <section class="quick-menu">
+        <div class="quick-menu-inner">
+            <a href="#reservation" class="quick-item">
+                <div class="quick-icon">📋</div>
+                <span>진료예약</span>
+            </a>
+            <a href="#doctors" class="quick-item">
+                <div class="quick-icon">👨‍⚕️</div>
+                <span>의료진소개</span>
+            </a>
+            <a href="#info" class="quick-item">
+                <div class="quick-icon">🕐</div>
+                <span>진료시간</span>
+            </a>
+            <a href="#location" class="quick-item">
+                <div class="quick-icon">📍</div>
+                <span>오시는길</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-tag">ABOUT US</span>
+                <h2>강탄병원을 소개합니다</h2>
+                <p class="section-desc">환자의 건강과 행복을 최우선으로 생각하는 강탄병원입니다.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-number">01</div>
+                    <h3>환자 중심 진료</h3>
+                    <p>환자 한 분 한 분의 상태에 맞춘 1:1 맞춤 진료 시스템을 운영합니다.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-number">02</div>
+                    <h3>최첨단 의료장비</h3>
+                    <p>MRI, CT, 디지털 X-ray 등 최신 장비를 갖추고 정확한 진단을 제공합니다.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-number">03</div>
+                    <h3>풍부한 임상경험</h3>
+                    <p>수만 건 이상의 수술 경험을 보유한 전문 의료진이 진료합니다.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-number">04</div>
+                    <h3>체계적 재활</h3>
+                    <p>수술 후 전문 재활 프로그램으로 빠른 일상 복귀를 돕습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Centers Section -->
+    <section class="section centers" id="centers">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-tag">SPECIALIZED CENTERS</span>
+                <h2>전문 센터 안내</h2>
+                <p class="section-desc">각 분야 최고의 전문 의료진이 진료합니다.</p>
+            </div>
+            <div class="centers-grid">
+                <div class="center-card">
+                    <div class="center-icon">🦴</div>
+                    <h3>척추센터</h3>
+                    <p>디스크, 척추관협착증, 척추측만증 등 척추 질환의 비수술 치료부터 최소침습 수술까지</p>
+                    <span class="center-tag">GANGTAN Spine Center</span>
+                </div>
+                <div class="center-card">
+                    <div class="center-icon">🧠</div>
+                    <h3>뇌신경센터</h3>
+                    <p>뇌졸중, 뇌출혈, 두통, 어지러움 등 뇌신경 질환의 정밀 진단과 치료</p>
+                    <span class="center-tag">GANGTAN Cranial Nerve Center</span>
+                </div>
+                <div class="center-card">
+                    <div class="center-icon">🦵</div>
+                    <h3>무릎관절센터</h3>
+                    <p>퇴행성 관절염, 십자인대 손상, 반월판 파열 등 무릎 질환 전문</p>
+                    <span class="center-tag">GANGTAN Knee Joint Center</span>
+                </div>
+                <div class="center-card">
+                    <div class="center-icon">💪</div>
+                    <h3>어깨·팔꿈치<br>관절센터</h3>
+                    <p>회전근개 파열, 오십견, 테니스엘보 등 상지 관절 질환 치료</p>
+                    <span class="center-tag">GANGTAN Shoulder Center</span>
+                </div>
+                <div class="center-card">
+                    <div class="center-icon">⚡</div>
+                    <h3>당일수술센터</h3>
+                    <p>최소 침습 수술로 당일 입·퇴원 가능, 빠른 일상 복귀</p>
+                    <span class="center-tag">GANGTAN Same-day Surgery</span>
+                </div>
+                <div class="center-card">
+                    <div class="center-icon">🏥</div>
+                    <h3>재활치료센터</h3>
+                    <p>수술 후 전문 재활, 물리치료, 도수치료를 통한 체계적 회복</p>
+                    <span class="center-tag">GANGTAN Rehab Center</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="section doctors" id="doctors">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-tag">MEDICAL STAFF</span>
+                <h2>의료진 소개</h2>
+                <p class="section-desc">각 분야 전문의가 최선의 진료를 약속합니다.</p>
+            </div>
+            <div class="doctors-grid">
+                <div class="doctor-card">
+                    <div class="doctor-avatar">강</div>
+                    <div class="doctor-info">
+                        <h3>강현우 <span>대표원장</span></h3>
+                        <p class="doctor-specialty">정형외과 전문의</p>
+                        <ul>
+                            <li>서울대학교 의과대학 졸업</li>
+                            <li>前 서울대병원 정형외과 전임의</li>
+                            <li>대한척추외과학회 정회원</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-avatar">탄</div>
+                    <div class="doctor-info">
+                        <h3>탄재민 <span>병원장</span></h3>
+                        <p class="doctor-specialty">신경외과 전문의</p>
+                        <ul>
+                            <li>연세대학교 의과대학 졸업</li>
+                            <li>前 세브란스병원 신경외과 전임의</li>
+                            <li>대한신경외과학회 정회원</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-avatar">이</div>
+                    <div class="doctor-info">
+                        <h3>이수진 <span>과장</span></h3>
+                        <p class="doctor-specialty">재활의학과 전문의</p>
+                        <ul>
+                            <li>고려대학교 의과대학 졸업</li>
+                            <li>前 아산병원 재활의학과 전임의</li>
+                            <li>대한재활의학회 정회원</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="section info" id="info">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-tag">INFORMATION</span>
+                <h2>진료 안내</h2>
+            </div>
+            <div class="info-grid">
+                <div class="info-card schedule" id="reservation">
+                    <h3>진료시간 안내</h3>
+                    <table>
+                        <tr><td>평일</td><td>09:00 ~ 18:00</td></tr>
+                        <tr><td>토요일</td><td>09:00 ~ 13:00</td></tr>
+                        <tr><td>점심시간</td><td>12:30 ~ 13:30</td></tr>
+                        <tr><td>일요일·공휴일</td><td class="closed">휴진</td></tr>
+                    </table>
+                    <p class="info-notice">※ 응급환자는 24시간 진료 가능합니다.</p>
+                </div>
+                <div class="info-card location" id="location">
+                    <h3>오시는 길</h3>
+                    <div class="location-detail">
+                        <p><strong>주소</strong><br>서울특별시 강남구 테헤란로 123 강탄빌딩</p>
+                        <p><strong>지하철</strong><br>2호선 강남역 3번 출구 도보 5분</p>
+                        <p><strong>버스</strong><br>간선: 140, 144, 145 / 지선: 3412, 4412</p>
+                        <p><strong>주차</strong><br>건물 내 지하주차장 이용 (3시간 무료)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-tag">PARTNERSHIP</span>
+                <h2>제휴 문의</h2>
+                <p class="section-desc">강탄병원과의 제휴·협력에 관심이 있으시면 문의해주세요.</p>
+            </div>
+            <form id="contact-form" action="https://formspree.io/f/xykdjyog" method="POST">
+                <div class="form-row">
+                    <input type="text" name="company" placeholder="회사명 / 기관명" required>
+                    <input type="text" name="name" placeholder="담당자명" required>
+                </div>
+                <div class="form-row">
+                    <input type="email" name="email" placeholder="이메일" required>
+                    <input type="tel" name="phone" placeholder="연락처">
+                </div>
+                <textarea name="message" placeholder="문의 내용을 입력해주세요." rows="5" required></textarea>
+                <button type="submit" id="submit-btn">문의하기</button>
+                <p id="form-status"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="logo-icon">+</span>
+                    <strong>강탄병원</strong>
+                </div>
+                <div class="footer-links">
+                    <a href="#">개인정보처리방침</a>
+                    <a href="#">이용약관</a>
+                    <a href="#">비급여안내</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>서울특별시 강남구 테헤란로 123 강탄빌딩 | 대표전화: 02-1234-5678 | 팩스: 02-1234-5679</p>
+                <p>대표: 강현우 | 사업자등록번호: 123-45-67890</p>
+                <p class="copyright">&copy; 2026 GANGTAN HOSPITAL. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="main.js"></script>
 </body>
